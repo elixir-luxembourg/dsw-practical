@@ -17,11 +17,11 @@ Before starting the practical, make sure you have the following ready, if not, p
 ## Exercise 1: Create and fill in questionnaire
 
 In the DSW tool, _Knowledge Models_ act as source databases that hold requirements in one or more sub-area of RDM.  
-The tool comes pre-packed with a comprehensive default knowledge model. In this practical we will use a cut-down version of this model.
+The tool comes pre-packed with a comprehensive default knowledge model. In this practical we will use a cut-down version of this model. To create and fill in a questionnaire:
 
 
 1. Login to the DSW.<br/>
-2. On the left-hand side navigation menu click _Knowledge Models_ to list models available. You should see "DM-DS Workshop Model" as below: <br/> <br/><br/>![Alt](./list_workshop_km.png)<br/><br/><br/>
+2. On the left-hand side navigation menu click "Knowledge Models" to list models available. You should see "DM-DS Workshop Model" as below: <br/> <br/><br/>![Alt](./list_workshop_km.png)<br/><br/><br/>
 3. Click on the knowledge model to go to its overview page showing version history and available actions.<br/>
 4. Click on the create questionnaire button to create a new questionnaire from the model: <br/><br/><br/>![Alt](./km_create_questnre_1.png)<br/><br/><br/>
 5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other participants e.g. your user id or name. Also, set the accessibility level of your model to "Public" or "Public Read-Only", then click "Save". <br/><br/><br/> ![Alt](./km_create_questnre_2.png)<br/><br/><br/>
@@ -34,6 +34,8 @@ When filling in the questionnaire pay attention to the following:
  - under most questions you'll find an explanation that might help you with your answers <br/><br/><br/>![Alt](./questnre_hints.png)<br/><br/><br/>
  - for some questions you'll provide more than one answer, for instance when specifying "Contributors" in the "Administrative details" section. Clicking "Add" button at the end of the question will add a new empty answer <br/><br/><br/>![Alt](./add_answer.png)<br/><br/><br/>
 
-## Exercise 2
+## Exercise 2: Export questionnaire
 
-TODO
+Once you complete the questionnaire, you may export a copy of it as a document.  To do so:
+
+1. On the left-hand side navigation menu click "Questionnaires". Click the three dots menu next to your questionnaire and select "Create Document". <br/><br/><br/>![Alt](./export_questnre.png)<br/><br/><br/>
