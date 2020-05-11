@@ -1,8 +1,8 @@
-# Data Stewardship Wizard practical
+# Practical with the Data Stewardship Wizard
 
 
 The Data Stewardship Wizard, hereon DSW, is an awareness tool in the area of research data management (RDM). 
-In this practical you'll fill in a questionnaire using DSW. The questionnaire will guide you through key requirements in RDM making you think if and how your meet those requirements in your project.
+In this practical you'll fill in a questionnaire using the DSW. The questionnaire will guide you through key requirements in RDM making you think if and how your meet those requirements in your project.
 
 
 ## Required material
@@ -11,7 +11,7 @@ Before starting the practical, make sure you have the following ready, if not, p
 
 * The URL link for DSW training instance.
 * User credentials to login to the training instance.
-* The _example scenario_ for the [workshop](https://github.com/elixir-luxembourg/DS-DM-training).
+* The [example scenario](https://github.com/elixir-luxembourg/DS-DM-training/blob/master/resources/DM-DP_RunningExample.pdf) for our workshop.
 
 
 ## Exercise 1: Create and fill in questionnaire
