@@ -21,21 +21,20 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 
 1. Login to the DSW.<br/>
-2. On the left-hand side navigation menu click "Knowledge Models" to list models available. You should see "DM-DS Workshop Model" as below: <br/> <br/><br/>![Alt](./list_workshop_km.png)<br/><br/><br/>
-3. Click on the knowledge model to go to its overview page showing version history and available actions.<br/>
-4. Click on the create questionnaire button to create a new questionnaire from the model: <br/><br/><br/>![Alt](./km_create_questnre_1.png)<br/><br/><br/>
-5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other participants e.g. your user id or name. Also, set the accessibility level of your model to "Public" or "Public Read-Only", then click "Save". <br/><br/><br/> ![Alt](./km_create_questnre_2.png)<br/><br/><br/>
-6. Your questionnaire will be displayed and is ready to be filled. <br/><br/><br/> ![Alt](./fill_questnre_1.png)<br/><br/><br/>
-7. The DSW provides a filtering feature that allows you to see questions only relevant to a particular phase of a research project. From the "Current Phase" list select "Before Submitting the DMP". This will allow you to view and answers all questions for our practical. <br/><br/><br/> ![Alt](./fill_questnre_2.png)<br/><br/><br/>
+2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](./list_workshop_km.png)<br/><br/><br/>
+3. Click on the knowledge model named `DM-DS_Workshop_Model` to go to its overview page, which displays model's version history and available actions.<br/>
+4. Click `Create questionnaire` on top right to create a new questionnaire from the workshop model: <br/><br/><br/>![Alt](./km_create_questnre_1.png)<br/><br/><br/>
+5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other participants e.g. your user id or name. Also, set the accessibility level of your questionnaire to `Public` or `Public Read-Only` and save. <br/><br/><br/> ![Alt](./km_create_questnre_2.png)<br/><br/><br/>
+6. Your questionnaire will be displayed and is ready to be filled. Under most of the questions you will find hints for the questions. <br/><br/><br/> ![Alt](./fill_questnre_1.png)<br/><br/><br/>
+7. The DSW provides a filtering feature that allows you to see questions only relevant to a particular phase of a research project. From the `Current Phase` list select `Before Submitting the DMP`. This will allow you to view and answers all questions for our practical. <br/><br/><br/> ![Alt](./fill_questnre_2.png)<br/><br/><br/>
 
 When filling in the questionnaire pay attention to the following:
 
- - do not forget to save your answers from time to time <br/><br/><br/>![Alt](./save_questnre.png)<br/><br/><br/>
- - under most questions you'll find an explanation that might help you with your answers <br/><br/><br/>![Alt](./questnre_hints.png)<br/><br/><br/>
- - for some questions you'll provide more than one answer, for instance when specifying "Contributors" in the "Administrative details" section. Clicking "Add" button at the end of the question will add a new empty answer <br/><br/><br/>![Alt](./add_answer.png)<br/><br/><br/>
+ - do not forget to **save** your answers from time to time <br/><br/><br/>![Alt](./save_questnre.png)<br/><br/><br/>
+ - for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](./add_answer.png)<br/><br/><br/>
 
 ## Exercise 2: Export questionnaire
 
 Once you complete the questionnaire, you may export a copy of it as a document.  To do so:
 
-1. On the left-hand side navigation menu click "Questionnaires". Click the three dots menu next to your questionnaire and select "Create Document". <br/><br/><br/>![Alt](./export_questnre.png)<br/><br/><br/>
+1. On the left-hand side navigation menu click `Questionnaires`. Click the three dots menu next to your questionnaire and select `Create Document`. <br/><br/><br/>![Alt](./export_questnre.png)<br/><br/><br/>
