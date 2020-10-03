@@ -30,7 +30,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 When filling in the questionnaire pay attention to the following:
 
- - do not forget to **save** your answers from time to time <br/><br/><br/>![Alt](./save_questnre.png)<br/><br/><br/>
+
  - for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](./add_answer.png)<br/><br/><br/>
 
 ## Exercise 2: Export questionnaire
