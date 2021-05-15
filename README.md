@@ -21,20 +21,20 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 
 1. Login to the DSW.<br/>
-2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](./list_workshop_km.png)<br/><br/><br/>
+2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](images/knowlege_model.png)<br/><br/><br/>
 3. Click on the knowledge model named `DM-DS_Workshop_Model` to go to its overview page, which displays model's version history and available actions.<br/>
-4. Click `Create questionnaire` on top right to create a new questionnaire from the workshop model: <br/><br/><br/>![Alt](./km_create_questnre_1.png)<br/><br/><br/>
-5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other trainees, for example include your user name in the questionnaire name. In addition, you may share your questionnaire with others. You may allowing either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your questionnaire. <br/><br/><br/> ![Alt](./km_create_questnre_2.png)<br/><br/><br/>
-6. Your questionnaire will be displayed and is ready to be filled. Under most of the questions you will find hints for the questions. <br/><br/><br/> ![Alt](./fill_questnre_1.png)<br/><br/><br/>
-7. The DSW provides a filtering feature that allows you to see questions only relevant to a particular phase of a research project. From the `Current Phase` list select `Before Submitting the DMP`. This will allow you to view and answers all questions for our practical. <br/><br/><br/> ![Alt](./fill_questnre_2.png)<br/><br/><br/>
+4. Click `Create project` on top right to create a new questionnaire from the workshop model: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
+5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other trainees, for example include your user name in the questionnaire name. In addition, you may share your questionnaire with others. You may allowing either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your questionnaire. <br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>
+6. Your questionnaire will be displayed and is ready to be filled. Under most of the questions you will find hints for the questions. <br/><br/><br/> ![Alt](images/fill1.png)<br/><br/><br/>
+7. The DSW provides a filtering feature that allows you to see questions only relevant to a particular phase of a research project. From the `Current Phase` list select `Before Submitting the DMP`. This will allow you to view and answers all questions for our practical. <br/><br/><br/> ![Alt](images/fill2.png)<br/><br/><br/>
 
 When filling in the questionnaire pay attention to the following:
 
 
- - for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](./add_answer.png)<br/><br/><br/>
+ - for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](images/add_answer.png)<br/><br/><br/>
 
-## Exercise 2: Export questionnaire
+## Exercise 2: Export and share questionnaire
 
-Once you complete the questionnaire, you may export a copy of it as a document.  To do so:
-
-1. On the left-hand side navigation menu click `Questionnaires`. Click the three dots menu next to your questionnaire and select `Create Document`. <br/><br/><br/>![Alt](./export_questnre.png)<br/><br/><br/>
+1. Once you complete the questionnaire, on the top right corner, click on the `Share` button. You can share it with your collaborator, by adding their user name, while defining the rights you wish to grant them (owner, editor, viewer). Click on the save button when finished. <br/><br/><br/>![Alt](images/share.png)<br/><br/><br/>.
+2. You may export a copy of it as a document.  To do so:On the left-hand side navigation menu click `Documents`and select the `Create Document` button. After that, select the required template, then select the export format that you need and click on the `Create` button. <br/><br/><br/>![Alt](images/doc.png)<br/><br/><br/>
+3. Click on the three dots menu next to your document and `Download` it. <br/><br/><br/>![Alt](images/download.png)<br/><br/><br/>.
