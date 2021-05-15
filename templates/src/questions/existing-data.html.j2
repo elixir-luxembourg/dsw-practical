@@ -1,0 +1,104 @@
+<div id="existing-data" class="question">
+  <h3>1.how  will existing data be re-used? </h3>
+  <div class="answer">
+  {# Existing datasets #}
+  {%- set preexistingPath = [uuids.reusingCUuid, uuids.preexistingQUuid]|reply_path -%}
+  {%- set preexistingAUuid = repliesMap[preexistingPath]|reply_str_value -%} {# Is there any pre-existing data? #}
+  {%- set usingPreexistingPath = [preexistingPath, uuids.preexistingYesAUuid, uuids.usingPreexistingQUuid]|reply_path -%}
+  {%- set usingPreexistingAUuid = repliesMap[usingPreexistingPath]|reply_str_value -%} {#Will you be using any pre-existing data (including other people's data)?#}
+  {%- set refDataPath = [usingPreexistingPath, uuids.usingPreexistingYesAUuid, uuids.refDataQUuid]|reply_path -%}
+  {%- set refDataItems = repliesMap[refDataPath]|reply_items -%}  {# What reference data will you use? #}
+      
+  {%- set refDataSetNamePath = [refDataPath, uuids.refDataNameQUuid]|reply_path -%}
+  {%- set refDataSetName = repliesMap[refDataSetNamePath]|reply_str_value -%} 
+
+  {%- set refDataSetWherePath = [refDataPath, uuids.refDataWhereQUuid]|reply_path -%}
+  {%- set refDataSetWhere = repliesMap[refDataSetWherePath]|reply_str_value -%}  {# Where is this data set available#}
+
+  {%- set refDataSetConditionPath = [refDataPath, uuids.refDataConditionsQUuid]|reply_path -%}
+  {%- set refDataSetCondition = repliesMap[refDataSetWherePath]|reply_str_value -%} {# What are the conditions of use for this data set? #}
+  {%- set publicConditionPath = [refDataSetConditionPath, uuids.refDataConditionsCC0AUuid]|reply_path -%}
+  {%- set publicCondition = repliesMap[publicConditionPath]|reply_str_value -%} {#They are freely available for any use (public domain or CC0)#}
+
+  {%- set quoteConditionPath = [refDataSetConditionPath, uuids.refDataConditionsCCBYAUuid]|reply_path -%}
+  {%- set quoteCondition = repliesMap[quoteConditionPath]|reply_str_value -%} {#They are freely available with obligation to quote the source (e.g. CC-BY)#}
+
+  {%- set restrictionConditionPath = [refDataSetConditionPath, uuids.refDataConditionsOtherAUuid]|reply_path -%}
+  {%- set restrictionCondition = repliesMap[restrictionConditionPath]|reply_str_value -%}  {#They are available under some restrictions, which we will follow in our project#}
+  
+ 
+  {%- set restrictionWhatConditionPath = [refDataSetConditionPath, uuids.refDataConditionsOtherAUuid, uuids.refDataWhatConditionAUuid]|reply_path -%}
+  {%- set restrictionWhatCondition = repliesMap[restrictionWhatConditionPath]|reply_str_value -%}  {# what conditions#}   
+  
+  {%- set refDataSetformatPath = [refDataPath, uuids.formatReferenceQUuid]|reply_path -%}
+  {%- set refDataSetFormat = repliesMap[refDataSetformatPath]|reply_items -%} {#Do you know in what format the reference data is available#}
+
+  {%- set directUsePath = [refDataSetformatPath, uuids.direclyUseAUuid]|reply_path -%}
+  {%- set directUse = repliesMap[directUsePath]|reply_str_value -%} {#I can directly use it#}
+
+  {%- set needConvertPath = [refDataSetformatPath, uuids.needConvertAUuid]|reply_path -%}
+  {%- set needConvert = repliesMap[needConvertPath]|reply_str_value -%} {#I need to convert it before using#}
+
+  {%- set refDataSetVersionPath = [refDataPath, uuids.refDataVersionedQUuid]|reply_path -%}
+  {%- set refDataSetVersion = repliesMap[refDataSetVersionPath]|reply_str_value -%}  {#Is the reference data resource versioned?#}
+
+  {%- set refDataSetVersionUsedPath = [refDataPath, uuids.refDataVersionedQUuid, uuids.refDataVersionedWhichQUuid ]|reply_path -%}
+  {%- set refDataSetVersionUsed = repliesMap[refDataSetVersionUsedPath]|reply_str_value -%}
+
+  {#body#}
+ 
+  <h4> Is there any pre-existing data? <h4>
+  {%- if preexistingAUuid == uuids.preexistingYesAUuid -%}
+  
+    {%- if usingPreexistingAUuid == uuids.usingPreexistingYesAUuid -%}
+    <h4>pre-existing data (including other people's data) is used</h4>
+    
+
+      {%- if refDataSetName %}
+        <p> Reference data set :{{ refDataSetName }} </p>
+      {% endif %}
+
+      {%- if refDataSetWhere %}
+          <p> Where is this data set available :{{ refDataSetWhere }} </p>
+      {% endif %}
+
+      {%- if refDataSetCondition == uuids.refDataConditionsCC0AUuid,  -%}
+      <p> They are freely available for any use (public domain or CC0) </p>.
+      {%- elif refDataSetCondition == uuids.refDataConditionsCCBYAUuid -%}
+      <p> They are freely available with obligation to quote the source (e.g. CC-BY) </p>
+
+      {%- if refDataSetCondition == uuids.refDataConditionsOtherAUuid -%}
+      <p> They are available under some restrictions, which we will follow in our project </p>.
+      
+      <p> {{ restrictionWhatCondition }} </p>
+      {% endif %}   
+
+    
+      {%- if refDataSetFormat == uuids.direclyUseAUuid  -%}
+        <p> I can directly use it </p>.
+      {%- elif refDataSetFormat == uuids.needConvertAUuid -%}
+        <p>  I need to convert it before using </p>
+      {% endif %} 
+
+      
+        
+      {%- if refDataSetVersion == uuids.refDataVersionedYesAUuid -%}
+        <p> The reference data resource is versioned </p>
+      
+        <p> {{  Used version : {{ refDataSetVersionUsed }} }} </p>  {# Which version will you use?#}
+      {% endif %} 
+
+    {% endif %} 
+  {% else %}
+    <p> No </p> 
+  {% endif %}   
+     
+
+
+
+
+
+
+
+    
+      

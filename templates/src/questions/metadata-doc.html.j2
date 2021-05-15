@@ -1,0 +1,55 @@
+<div id="q-docs-metadata" class="question">
+  <h3>3.What metadata and documentation will accompany the data?</h3>
+  <div class="answer">
+
+
+  {%- set metadataExplorePath = [uuids.creatingCUuid, uuids.metadataQUuid, uuids.metadataExploreAUuid]|reply_path -%}
+  {%- set metadataExplore = repliesMap[metadataExplorePath]|reply_items -%} 
+  
+  {%- set metadataSuitablePath = [metadataExplorePath, uuids.metadataSuitableAUuid]|reply_path -%}
+  {%- set metadataSuitable = repliesMap[metadataSuitablePath]|reply_str_value -%} 
+
+  {%- set metadataWhenCollectingPath = [metadataExplorePath, uuids.metadataWhenCollectingAUuid]|reply_path -%}
+  {%- set metadataWhenCollecting = repliesMap[metadataWhenCollectingPath]|reply_str_value -%} 
+
+  {%- set metadataReusabilityPath = [metadataExplorePath, uuids.metadataReusabilityAUuid]|reply_path -%}
+  {%- set metadataReusability = repliesMap[metadataReusabilityPath]|reply_str_value -%} 
+
+  {%- set metadataIntegrityPath = [metadataExplorePath, uuids.metadataIntegrityAUuid]|reply_path -%}
+  {%- set metadataIntegrity = repliesMap[metadataIntegrityPath]|reply_str_value -%} 
+
+  {%- set metadataProvenancePath = [metadataExplorePath, uuids.metadataProvenanceAUuid]|reply_path -%}
+  {%- set metadataProvenance = repliesMap[metadataIntegrityPath]|reply_str_value -%} 
+
+  {%- set metadataProvenancePath = [metadataExplorePath, uuids.metadataProvenanceAUuid]|reply_path -%}
+  {%- set metadataProvenance = repliesMap[metadataIntegrityPath]|reply_str_value -%} 
+
+  {%- set metadataNamingFilePath = [metadataExplorePath, uuids.metadataNamingFIleAUuid]|reply_path -%}
+  {%- set metadataNamingFile = repliesMap[metadataNamingFilePath]|reply_str_value -%} 
+
+  <h4> Describe you metadata; how will you document your data? </h4>
+
+  {%- if metadataSuitable %}
+        <p> Do suitable 'Minimum Information About ...' (MIA...) standards exist for your experiments? :{{ metadataSuitable }} </p>
+  {% endif %}
+
+  {%- if metadataWhenCollecting %}
+        <p> Do you know how and when you will be collecting the necessary metadata?: {{ metadataWhenCollecting }} </p>
+  {% endif %}
+
+  {%- if metadataReusability %}
+        <p> Will you consider re-usability of your data beyond your original purpose?: {{ metadataReusability }} </p>
+  {% endif %}
+
+  {%- if metadataIntegrity %}
+        <p> How will you ensure data integrity?: {{ metadataIntegrity }} </p>
+  {% endif %}
+
+  {%- if metadataProvenance %}
+        <p> Data provenance; how will you document data origins, generation and processing?: {{ metadataProvenance }} </p>
+  {% endif %}
+
+
+  {%- if metadataNamingFile %}
+        <p> How will you do file naming and file organization? : {{ metadataNamingFile }} </p>
+  {% endif %}

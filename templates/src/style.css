@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+
+/* Layout and global styles */
+
+@page {
+    margin: 2.5cm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    font-size: 11pt;
+    counter-reset: section;
+    counter-reset: question;
+}
+
+
+/* Sections */
+
+section {
+    margin-bottom: 4rem;
+}
+
+.dmp-section .question+.question {
+    margin-top: 1cm;
+}

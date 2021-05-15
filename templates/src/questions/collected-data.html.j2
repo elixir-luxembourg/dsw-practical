@@ -1,0 +1,41 @@
+<div id="q-docs-metadata" class="question">
+  <h3>2.What  data  will be    collected    or produced?. ?</h3>
+  <div class="answer">
+
+  {# collected datasets #}
+
+  {%- set formatPath = [uuids.creatingCUuid, uuids.formatsQUuid]|reply_path -%}
+  {%- set preexistingAUuid = repliesMap[formatPath]|reply_items -%} 
+
+  {%- set formatTypePath = [formatPath, uuids.formatsTypeAUuid]|reply_path -%}
+  {%- set formatType = repliesMap[formatTypePath]|reply_str_value -%} 
+
+  {%- set formatStandardPath = [formatPath, uuids.formatsIsStandardAUuid]|reply_path -%}
+  {%- set formatStandard = repliesMap[formatStandardPath]|reply_str_value -%} 
+
+  {%- set formatSharingPath = [formatPath, uuids.formatsSharingAUuid]|reply_path -%}
+  {%- set formatSharing = repliesMap[formatSharingPath]|reply_str_value -%}   formatVolumeQUuid
+
+  {%- set formatVolumePath = [formatPath, uuids.formatsVolumeAUuid]|reply_path -%}
+  {%- set formatVolume = repliesMap[formatVolumePath]|reply_str_value -%}
+
+ 
+  <h4> Describe your data; formats and types </h4>
+  {%- if formatType %}
+        <p> Data format type :{{ formatType }} </p>
+  {% endif %}
+
+  {%- if formatStandard %}
+        <p> Standard data format used by others in this field :{{ formatStandard }} </p>
+  {% endif %}
+
+  {%- if formatSharing %}
+        <p> Does this data format enable sharing and long term archiving : :{{ formatSharing }} </p>
+  {% endif %}
+
+  {%- if formatVolume %}
+        <p> Volume of data of this type: {{ formatVolume }} </p>
+  {% endif %}
+
+
+  

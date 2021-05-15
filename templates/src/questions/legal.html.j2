@@ -1,0 +1,95 @@
+<div id="q-docs-metadata" class="question">
+  <h3>5.If personal data are processed, how will compliance with legislation on personal data and security be ensured? ?</h3>
+  <div class="answer">
+
+  {# consent and legalbases #}
+
+  {%- set consentPath = [uuids.creatingCUuid, uuids.consentQUuid]|reply_path -%}
+  {%- set consent = repliesMap[consentPath]|reply_str_value -%} 
+
+  {%- set consentDonotCollectPath = [consentPath, uuids.doNocollectAUuid]|reply_path -%}
+  {%- set consentDonotCollect = repliesMap[consentDonotCollectPath]|reply_str_value -%} 
+
+  {%- set consentLawfullPath = [consentPath, uuids.lawfullAUuid]|reply_path -%}
+  {%- set consentLawfull = repliesMap[consentLawfullPath]|reply_str_value -%} 
+
+  {%- set consentLegalBasesPath = [consentPath, uuids.lawfullAUuid, uuids.legalBasesAUuid]|reply_path -%}
+  {%- set consentLegalBases = repliesMap[consentLegalBasesPath]|reply_str_value -%} 
+
+  {%- set consentSpecificPath = [consentPath, uuids.consentSpecificAUuid ]|reply_path -%}
+  {%- set consentSpecific = repliesMap[consentSpecificPath]|reply_str_value -%} 
+
+  {%- set consentSharingPath = [consentPath, uuids.consentSharingAUuid ]|reply_path -%}
+  {%- set consentSharing = repliesMap[consentSharingPath|reply_str_value -%} 
+
+  {%- set consentAnonymPath = [consentPath, uuids.consentAnonymAUuid]|reply_path -%}
+  {%- set consentAnonym = repliesMap[consentAnonymPath|reply_str_value -%} 
+
+  {%- set ipPath = [uuids.creatingCUuid, uuids.ipQUuid]|reply_path -%}
+  {%- set ip = repliesMap[ipPath]|reply_items -%} 
+
+  {%- set copyrightPath = [ipPath, uuids.notCopyrightAUuid ]|reply_path -%}
+  {%- set copyright = repliesMap[copyrightPath]|reply_str_value -%} 
+
+  {%- set ownedInvestigatorPath = [ipPath, uuids.ownedInvestigatorAUuid ]|reply_path -%}
+  {%- set ownedInvestigator = repliesMap[ownedInvestigatorPath]|reply_str_value -%} 
+
+  {%- set ownedInstitutePath = [ipPath, uuids.ownedInstituteAUuid ]|reply_path -%}
+  {%- set ownedInstitute = repliesMap[ownedInstitutePath]|reply_str_value -%} 
+
+
+  {%- set consortiumPath = [ipPath, uuids.consortiumAUuid ]|reply_path -%}
+  {%- set consortium = repliesMap[consortiumPath]|reply_str_value -%} 
+
+  {%- set intellectPropertyPath = [ipPath, uuids.others, uuids.intellectualPropertyAUuid ]|reply_path -%}
+  {%- set intellectProperty = repliesMap[intellectPropertyPath]|reply_str_value -%} 
+
+  <h4> Will you need consent for any newly collected personal data? </h4>
+
+  {%- if consent == uuids. doNocollectAUuid -%}
+      <p> We dont  need any consent for collected data because those are not personal </p>.
+  {%- elif consent == uuids.lawfullAUuid -%}
+      <p> No, our work on personal data is based on a lawful basis other than consent : {{ consentLegalBases}} </p>
+  
+  {%- elif consent == uuids.consentSpecificAUuid -%}
+      <p> Yes, we will collect consent for our specific use of the data </p>
+
+  {%- elif consent == uuids.consentSharingAUuid -%}
+      <p> Yes, we will collect consent for our use as well as sharing of the data </p>
+
+   {%- elif consent == uuids.consentAnonymAUuid -%}
+      <p> Yes, we will collect consent for our use of the data, and will anonymize the data afterwards for reuse </p>
+   {% endif%}
+
+   <h3> 6.How  will  other legal issues, such as intellectual property rights and ownership, be managed? </>
+
+   <h4> How will IP rights arranged for the generated data? </h4>
+
+   {%- if ip == uuids.notCopyrightAUuid,  -%}
+      <p> Our data is legally not copyrightable, there is no legal owner </p>.
+   {%- elif ip == uuids.ownedInvestigatorAUuid -%}
+      <p> All data will be owned by the Principle Investigator </p>
+  
+   {%- elif ip == uuids.ownedInstituteAUuid -%}
+      <p> All data will be owned by the institute </p>
+
+   {%- elif ip == uuids.consortiumAUuid -%}
+      <p> We have a consortium agreement that arranges Intellectual Property </p>
+
+   {%- elif ip == uuids.others -%}
+      <p>  Intellectual property for the data collected in the project: {{ intellectProperty}} </p>
+
+   {% endif % }
+
+  
+
+ 
+
+ 
+
+
+  
+
+
+
+

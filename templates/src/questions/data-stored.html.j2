@@ -1,0 +1,63 @@
+<div id="q-docs-metadata" class="question">
+  <h3>4.How  will  data and  metadata  be stored and backed up    during    the research?</h3>
+  <div class="answer">
+
+  {%- set workspacePath = [uuids.processingCUuid, uuids.sharedWorkspaceQUuid]|reply_path -%}
+  {%- set workspace = repliesMap[workspacePath]|reply_str_value -%} 
+
+
+  {%- set storageSystemPath = [uuids.processingCUuid, uuids.storageSystemeQUuid]|reply_path -%}
+  {%- set storageSystem = repliesMap[storageSystemPath]|reply_str_value -%} 
+  
+  {%- set storageSystemExplorePath = [storageSystemPath, uuids.storageSystemeExploreQUuid]|reply_path -%}
+  {%- set storageSystemExplore = repliesMap[storageSystemExplorePath]|reply_str_value -%} 
+
+  {%- set fileSystemPath = [storageSystemExplorePath, uuids.storageFileSystemeQUuid ]|reply_path -%}
+  {%- set fileSystem = repliesMap[fileSystemPath]|reply_str_value -%} 
+
+  {%- set storageOtherPath = [storageSystemExplorePath, uuids.storageOtherQUuid ]|reply_path -%}
+  {%- set storageOther = repliesMap[storageOtherPath]|reply_str_value -%} 
+
+  {%- set WorkflowPath = [uuids.processingCUuid, uuids.workflowQUuid]|reply_path -%}
+  {%- set Workflow = repliesMap[WorkflowPath]|reply_str_value -%} 
+
+  {%- set exactRunPath = [uuids.processingCUuid, uuids.exactRunQUuid]|reply_path -%}
+  {%- set exactRun = repliesMap[exactRunPath]|reply_str_value -%} 
+
+  {%- set lossRiskPath = [uuids.processingCUuid, uuids.lossRiskQUuid]|reply_path -%}
+  {%- set lossRisk = repliesMap[lossRiskPath]|reply_str_value -%} 
+
+  {%- if workspace %}
+        <p> Will you use a shared workspace to store and work on data? :{{ workspace }} </p>
+  {% endif %
+
+  <h4> Data storage systems and file naming conventions </h4>
+
+  {%- if fileSystem %}
+        <p> Using a filesystem with files and folders :{{ fileSystem }} </p>
+  {% endif %
+
+  {%- if storageOther %}
+        <p>  Using means other than the file system (like a database) to store data :{{ storageOther }} </p>
+  {% endif %
+
+  {%- if Workflow == uuids.workflowArrangedQUuid -%}
+      <p> Worflow of data processing has been arranged </p>.
+  {%- elif Worflow == uuids.workflowGuidanceQUuid -%}
+      <p> Worflow for data processing need more guidance </p>
+  {% endif %}   
+
+  {%- if exactRun %}
+        <p> How will you make sure to know what exactly has been run? :{{ exactRun }} </p>
+  {% endif %
+
+  <h4> How  will  data security and protection of sensitive  data  be taken  care  of during the research? </h4>
+
+  {%- if lossRisk %}
+        <p> How will you deal with the risk of information loss, breach and destruction? :{{ lossRisk }} </p>
+  {% endif %
+  
+
+  
+
+

@@ -1,0 +1,24 @@
+<div id="admin" class="question">
+  <div class="answer">
+
+   {%- set ProjectNamePath = [uuids.adminDetailsCUuid, uuids.projectNameQUuid]|reply_path -%} 
+   {%- set Projectname = repliesMap[ProjectnamePath]|reply_str_value -%} 
+
+   {%- set ContributorNamePath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid, uuids.contributorNameQUuid]|reply_path -%}
+   {%- set ContributorName = repliesMap[ContributorNamePath]|reply_str_value -%}
+
+   {%- set ContributorAffiliationPath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid, uuids.contributorAffiliationQUuid]|reply_path -%}
+   {%- set ContributorAffiliation = repliesMap[ContributorAffiliationPath]|reply_str_value -%}
+
+   {%- set ContributorRolePath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid, uuids.contributorRoleQUuid]|reply_path -%}
+   {%- set ContributorRole = repliesMap[ContributorRolePath]|reply_str_value -%}
+
+ 
+   {% if Projectname % }
+    <p> Project name : {{ Projectname }} </p>
+   {% if ContributorName %}
+    <p> Contributor : {{ ContributorName }} </p>
+   {% if ContributorAffiliation %}
+    <p> Affiliation : {{ ContributorAffiliation }} </p>
+   {% if ContributorRole %}
+    <p> Role : {{ ContributorRole }} </p>
