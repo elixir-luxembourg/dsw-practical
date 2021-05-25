@@ -1,0 +1,342 @@
+<div id="q-docs-metadata" class="question">
+  
+  <div class="answer">
+
+    {%- set producedDataPath = [uuids.preservingCUuid, uuids.producedDataQUuid]|reply_path -%}
+    {%- set producedDataItems = repliesMap[producedDataPath]|reply_items -%}
+    {%- if producedDataItems|length > 0 -%}
+      
+      {%- for i in producedDataItems -%}
+        {%- set pathPrefix = [producedDataPath, i]|reply_path -%}
+        {# dataset#}
+        {%- set producedDataName = repliesMap[[pathPrefix, uuids.producedDataNameQUuid]|reply_path]|reply_str_value -%}
+        <h3>How and when will data be shared? </h3>
+        <h4> List of data sets you will be publishing</h4>
+
+    <ul>
+    <li>
+        <h5> Publishing data set </h5>
+        <p> Name of publishing Data sets : {{ producedDataName if producedDataName else "(No name given)" }}</p>
+
+    </li>
+        {#Repository#}
+       
+        {%- set repositoryDataPath = [pathPrefix, uuids.repositoryDataQUuid]|reply_path -%}
+        {%- set repositoryDataAUuid = repliesMap[repositoryDataPath]|reply_str_value -%}
+
+        {%- if repositoryDataAUuid -%}
+
+        
+          <h5> publishing repository of data set : </h5>
+
+        <li>
+
+          {%- if repositoryDataAUuid == uuids.repositoryDomainAUuid  -%}
+            
+            {%- set repositoryWhat = repliesMap[[repositoryDataPath, uuids.repositoryDomainAUuid , uuids.repositoryWhatDataAUuid]|reply_path] -%}
+
+              <p> The data set will be stored in: {{ macros.integrationValue(repositoryWhat, uuids.repositoryWhatDataAUuid) }}</p>
+
+            {%- set repositoryContactPath = [repositoryDataPath, uuids.repositoryDomainAUuid , uuids.repositoryContactAUuid]|reply_path -%}
+            {%- set repositoryContactAUuid = repliesMap[repositoryContactPath]|reply_str_value -%}
+
+            {%- if repositoryContactAUuid == uuids.repositorySubmissionAUuid -%}
+              <p> This submission is routine both for us and the repository </p>
+            {%- elif repositoryContactAUuid == uuids.repositoryContactedAUuid -%}
+              <p> We have contacted the repository </p>
+            {%- elif repositoryContactAUuid == uuids.repositoryWillcontactAUuid -%}
+              <p> We will contact the repository </p>
+            {%- elif repositoryContactAUuid == uuids.repositoryArrangedAUuid -%}
+
+              {%- set repositoryArrangedPath = [repositoryContactPath, uuids.repositoryArrangedAUuid, uuids.repositoryArrangedOtherAUuid]|reply_path -%}
+              {%- set repositoryArranged = repliesMap[repositoryArrangedPath]|reply_str_value -%}
+              <p>  We have made other arrangements: {{ repositoryArranged }}</p>
+            {%- endif -%}
+
+              
+          {%- endif -%}
+
+          {%- if repositoryDataAUuid == uuids.repositoryNationalAUuid  -%}
+
+          The data set will be stored in our national repository
+
+          {%- endif -%}
+
+          {%- if repositoryDataAUuid == uuids.repositoryInstitutionalAUuid  -%}
+
+          The data set will be stored in our institutional repository
+          
+
+          {%- endif -%}
+
+
+          {%- if repositoryDataAUuid == uuids.repositorySpecifiedpurposeAUuid  -%}
+
+          {%- set repositorySpecialSupportPath = [repositoryDataPath, uuids.repositorySpecifiedpurposeAUuid, uuids.repositorySpecifiedSupportAUuid]|reply_path -%}
+          
+          {%- set repositorySpecialSupportAUuid = repliesMap[repositorySpecialSupportPath]|reply_str_value -%}
+
+          
+            {%- if repositorySpecialSupportAUuid  == uuids.repositorySpecifiedSupportNoAUuid -%}
+
+            <p> We will not be able to support the repository data set for a sufficiently long time </P>
+
+
+            
+
+            {%- elif repositorySpecialSupportAUuid  == uuids.repositorySpecifiedSupportYesAUuid -%}
+
+              <p> We will be able to support the repository data set for a sufficiently long time </p>
+
+            {%- endif -%} 
+
+            
+            {%- set repositorySpecialServicePath = [repositoryDataPath, uuids.repositorySpecifiedpurposeAUuid, uuids.repositorySpecifiedServiceAUuid ]|reply_path -%}
+            {%- set repositorySpecialServiceAUuid = repliesMap[repositorySpecialServicePath]|reply_str_value -%}
+
+            {%- if repositorySpecialServiceAUuid  == uuids.repositorySpecifiedServiceDownloadAUuid -%}
+
+              <p> We will offer to users of the data/repository a download only service </p>
+
+            {%- elif repositorySpecialServiceAUuid  == uuids.repositorySpecifiedServiceAcessAUuid -%}
+
+              <p> We will offer to users of the data/repository a search and simple acess interface service </p>
+
+            {%- elif repositorySpecialServiceAUuid  == uuids.repositorySpecifiedServiceProcessingAUuid -%}
+
+              <p> We will offer to users of the data/repository an advanced processing service </p>
+
+            {%- endif -%}
+
+
+          {%- endif -%}
+          
+          {%- set repositorySpecialSysAdminPath = [repositoryDataPath, uuids.repositorySpecifiedpurposeAUuid, uuids.repositorySpecifiedSysAdminAUuid ]|reply_path -%}
+          {%- set repositorySpecialSysAdminAUuid = repliesMap[repositorySpecialSysAdminPath]|reply_str_value -%}
+
+          {%- if repositorySpecialSysAdminAUuid  == uuids.repositorySpecifiedSysAdminYesAUuid -%}
+
+              <p> We will arrange for system administration (at least security updates) and hardware maintenance for the server(s) </p>
+          
+          {%- elif repositorySpecialSysAdminAUuid  == uuids.repositorySpecifiedSysAdminNoAUuid -%}
+
+              <p> We will not arrange for system administration (at least security updates) and hardware maintenance for the server(s) </p>
+          
+          {%- endif -%}
+        </li>
+
+        {%- endif -%}
+
+
+        {# how long data kept#}
+
+
+
+        {%- set dataKeptPath = [pathPrefix, uuids.dataKeptQUuid ]|reply_path -%}
+        {%- set dataKeptAUuid = repliesMap[dataKeptPath]|reply_str_value -%}
+
+        {%- if dataKeptAUuid -%}
+
+         <h5> Keeping data set : </h5>
+
+         <li>
+
+          {%- if dataKeptAUuid == uuids.dataKeptTechnicallyAUuid -%}
+          <p> The dataset will be kept as long as technically possible </p>
+
+          {%- elif dataKeptAUuid == uuids.dataKeptuntilNeedAUuid -%}
+          <p> The dataset will be kept  Until it needs to be deleted for legal reasons </p>
+
+          {%- elif dataKeptAUuid == uuids.dataKeptfixedPeriodAUuid -%}
+          <p> The dataset will be kept for : 
+
+          {%- set longDataKept = repliesMap[[dataKeptPath, uuids.dataKeptfixedPeriodAUuid, uuids.dataKeptfixedPeriodIsAUuid]|reply_path]|reply_str_value -%}
+
+            {%- if longDataKept -%}
+            {{longDataKept}} 
+            </p>
+            {%- endif -%} 
+
+          {%- endif -%}
+
+          </li>
+        {%- endif -%}
+
+
+      </ul>  
+
+
+
+
+        {# Doi of dataset #}
+  
+        {%- set dataDoiPath = [pathPrefix, uuids.doiQUuid ]|reply_path -%}
+        {%- set dataDoiAUuid = repliesMap[dataDoiPath]|reply_str_value -%}
+
+       
+
+
+        {%- if dataDoiAUuid-%}
+          
+        
+
+          <h3>How  will  the application of a unique and persistent identifier  (DOI)  to each  data  set  be ensured? </h3>
+          
+          <ul>
+          <h5> DOI of data set  : </h5>
+          <li>
+
+          {%- if dataDoiAUuid == uuids.doiNoQUuid-%}
+            <p> This data set doesn't have a DOI </p>
+          {%- elif dataDoiAUuid == uuids.doiYesQUuid-%}
+          <p> The dataset DOI is  : 
+          {%- set dataDoi = repliesMap[[dataDoiPath, uuids.doiYesQUuid, uuids.doiYesIsQUuid]|reply_path]|reply_str_value -%}
+
+          {{dataDoi}} 
+          </p>
+          {%- endif -%}
+          </li>
+        {%- endif -%}
+
+        </ul>
+
+
+      {%- endfor -%}
+      
+
+    {%- endif -%}
+
+    {# Softwares #}
+
+  
+
+    {%- set softwaresPath = [uuids.preservingCUuid, uuids.publishingSoftwarwesQUuid]|reply_path -%}
+    {%- set softwaresItems = repliesMap[softwaresPath]|reply_items -%}
+    
+    {%- if softwaresItems|length > 0 -%}
+ 
+
+    
+     
+      {%- for i in softwaresItems -%}
+        {%- set pathPrefixsoft = [softwaresPath, i]|reply_path -%}
+
+        {%- set softwarePackage = repliesMap[[pathPrefixsoft, uuids.publishingSoftwarwesPackagesAUuid]|reply_path]|reply_str_value -%}
+      
+        <h3>What methods or software tools are needed  to access  and  use data? </h3>  
+      <ul> 
+        <h5> Software package</h5>
+
+        <li>
+        
+        <p> The sofware package is : {{ softwarePackage if softwarePackage else "(No name given)" }}</p>
+
+        <li>
+
+        {%- set softwareOpenSourcePath = [pathPrefixsoft, uuids.publishingSoftwarwesOpenSourceAUuid]|reply_path -%}
+        {%- set softwareOpenSourceAUuid = repliesMap[softwareOpenSourcePath]|reply_str_value -%}
+
+        {%- if softwareOpenSourceAUuid-%}
+
+          {%- if softwareOpenSourceAUuid == uuids.publishingSoftwarwesOpenSourceNoAUuid-%}
+            <h5> Adding a proper open-source license</h5>
+        <li>
+            <p> We will not be adding a proper open-source license </p>
+          {%- elif softwareOpenSourceAUuid == uuids.publishingSoftwarwesOpenSourceDecidedAUuid-%}
+            <p> we have decided on an open source license: 
+            {%- set openSourceLicence = repliesMap[[softwareOpenSourcePath, uuids.publishingSoftwarwesOpenSourceDecidedAUuid, uuids.publishingSoftwarwesOpenSourceLicenceAUuid]|reply_path]|reply_str_value -%}
+            {%- if openSourceLicence-%}
+            {{openSourceLicence}}
+            </p>
+            {%- endif -%}
+          
+          {%- elif softwareOpenSourceAUuid == uuids.publishingSoftwarwesOpenSourceWillDecideAUuid-%}
+            <p> we will decide on an open source license </p>
+          
+          
+          {%- endif -%}
+
+        {%- endif -%}
+
+        {%- set softwareAvailable = repliesMap[[pathPrefixsoft, uuids.publishingSoftwarwesPackagesAvailableAUuid]|reply_path]|reply_str_value -%}
+        {%- if softwareAvailable-%}
+        
+        
+          <p> The sofware package is available at  : {{ softwareAvailable }}</p>
+        {%- endif -%}
+
+        {%- set softwareCataloguePath = [pathPrefixsoft, uuids.publishingSoftwarwesPackagesCatalogueAUuid]|reply_path -%}
+        {%- set softwareCatalogueAUuid = repliesMap[softwareCataloguePath]|reply_str_value -%}
+
+        {%- if softwareCatalogueAUuid == uuids.publishingSoftwarwesPackagesCatalogueNoAUuid-%}
+          <p> The software package will not be listed in a catalogue </p>
+        {%- elif softwareCatalogueAUuid == uuids.publishingSoftwarwesPackagesCatalogueYesAUuid-%}
+          <p> The software package will be listed in a catalogue </p>
+
+        </li>
+        
+        {%- endif -%}
+        
+
+        
+
+
+
+
+        
+
+
+            
+
+          
+
+
+
+          
+
+
+
+
+
+
+
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+
+    
+      
+
+   
+
+    
+
+      
+
+
+
+
+
+
+
+
+    
+
+
+
+  </div>
+</div>
+
+   
+  
+
+
+
+
+
+
+
+
+  
+
+

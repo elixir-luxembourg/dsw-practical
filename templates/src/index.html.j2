@@ -5,10 +5,12 @@
 {%- set metricDefinitions = ctx.metrics -%}
 {%- set levelDefinitions = ctx.levels -%}
 
+{% import "src/macros.html.j2" as macros with context %}
+
 {% import "src/uuids.j2" as uuids with context %}
 <html lang="en">
   <head>
-    <title>Data Management Plan</title>
+    <title> Data Management Plan </title>
     <meta charset="utf-8">
     <style>
       {% include "src/style.css" %}
@@ -16,9 +18,9 @@
   </head>
   <body>
     <article class="dmp">
-     
+      {% include "src/questions/admin.html.j2" with context %}
       {% include "src/content.html.j2" with context %}
-      {% include "src/header.html.j2" with context %}
+      
     </article>
   </body>
 </html>

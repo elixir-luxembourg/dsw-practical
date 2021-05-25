@@ -1,87 +1,101 @@
 <div id="q-docs-metadata" class="question">
-  <h3>5.If personal data are processed, how will compliance with legislation on personal data and security be ensured? ?</h3>
+ 
   <div class="answer">
 
-  {# consent and legalbases #}
+    {# consent and legal bases #}
 
-  {%- set consentPath = [uuids.creatingCUuid, uuids.consentQUuid]|reply_path -%}
-  {%- set consent = repliesMap[consentPath]|reply_str_value -%} 
-
-  {%- set consentDonotCollectPath = [consentPath, uuids.doNocollectAUuid]|reply_path -%}
-  {%- set consentDonotCollect = repliesMap[consentDonotCollectPath]|reply_str_value -%} 
-
-  {%- set consentLawfullPath = [consentPath, uuids.lawfullAUuid]|reply_path -%}
-  {%- set consentLawfull = repliesMap[consentLawfullPath]|reply_str_value -%} 
-
-  {%- set consentLegalBasesPath = [consentPath, uuids.lawfullAUuid, uuids.legalBasesAUuid]|reply_path -%}
-  {%- set consentLegalBases = repliesMap[consentLegalBasesPath]|reply_str_value -%} 
-
-  {%- set consentSpecificPath = [consentPath, uuids.consentSpecificAUuid ]|reply_path -%}
-  {%- set consentSpecific = repliesMap[consentSpecificPath]|reply_str_value -%} 
-
-  {%- set consentSharingPath = [consentPath, uuids.consentSharingAUuid ]|reply_path -%}
-  {%- set consentSharing = repliesMap[consentSharingPath|reply_str_value -%} 
-
-  {%- set consentAnonymPath = [consentPath, uuids.consentAnonymAUuid]|reply_path -%}
-  {%- set consentAnonym = repliesMap[consentAnonymPath|reply_str_value -%} 
-
-  {%- set ipPath = [uuids.creatingCUuid, uuids.ipQUuid]|reply_path -%}
-  {%- set ip = repliesMap[ipPath]|reply_items -%} 
-
-  {%- set copyrightPath = [ipPath, uuids.notCopyrightAUuid ]|reply_path -%}
-  {%- set copyright = repliesMap[copyrightPath]|reply_str_value -%} 
-
-  {%- set ownedInvestigatorPath = [ipPath, uuids.ownedInvestigatorAUuid ]|reply_path -%}
-  {%- set ownedInvestigator = repliesMap[ownedInvestigatorPath]|reply_str_value -%} 
-
-  {%- set ownedInstitutePath = [ipPath, uuids.ownedInstituteAUuid ]|reply_path -%}
-  {%- set ownedInstitute = repliesMap[ownedInstitutePath]|reply_str_value -%} 
+   
 
 
-  {%- set consortiumPath = [ipPath, uuids.consortiumAUuid ]|reply_path -%}
-  {%- set consortium = repliesMap[consortiumPath]|reply_str_value -%} 
+    {%- set needConsentPath = [uuids.creatingCUuid, uuids.needConsentQUuid]|reply_path -%}
+    {%- set needConsentAUuid = repliesMap[needConsentPath]|reply_str_value -%}
+    {%- if needConsentAUuid -%}
 
-  {%- set intellectPropertyPath = [ipPath, uuids.others, uuids.intellectualPropertyAUuid ]|reply_path -%}
-  {%- set intellectProperty = repliesMap[intellectPropertyPath]|reply_str_value -%} 
+      <h3>If personal data are processed, how will compliance with legislation on personal data and security be ensured?</h3>
+      <h4> legal and ethical requirements </h4>
+    <ul>
+      <h5> How we collect data according to consent and legal basis</h5>
+      <li>
+      <p>
+      {%- if needConsentAUuid == uuids.needConsentNoNotCollectAUuid -%}
+        We don't need any consent for collected data because those are not personal.
+      {%- elif needConsentAUuid == uuids.needConsentNoAnotherLegalAUuid -%}
+        Our work on personal data is based on a lawful basis other than consent
+        {%- set legalBasePath = [needConsentPath, uuids.needConsentNoAnotherLegalAUuid, uuids.legalBaseQUuid]|reply_path -%}
+        {%- set legalBaseAUuid = repliesMap[legalBasePath]|reply_str_value -%}
+        {%- if legalBaseAUuid == uuids.legalBaseComplianceAUuid %}
+          <span class="separator">&ndash;</span> compliance with a legal obligation.
+        {%- elif legalBaseAUuid == uuids.legalBaseContractAUuid %}
+          <span class="separator">&ndash;</span> contractual performance.
+        {%- elif legalBaseAUuid == uuids.legalBaseVitalInterestsAUuid %}
+          <span class="separator">&ndash;</span> vital interests.
+        {%- elif legalBaseAUuid == uuids.legalBasePublicInterestsAUuid %}
+          <span class="separator">&ndash;</span> public interest or acting under official public authority.
+        {%- elif legalBaseAUuid == uuids.legalBaseLegitimateInterestsAUuid %}
+          <span class="separator">&ndash;</span> legitimate interests.
+        {%- elif legalBaseAUuid == uuids.legalBaseOtherAUuid -%}
+          {%- set legalBaseOtherPath = [legalBasePath, uuids.legalBaseOtherAUuid, uuids.legalBaseOtherQUuid]|reply_path -%}
+          {%- set legalBaseOther = repliesMap[legalBaseOtherPath]|reply_str_value -%}
 
-  <h4> Will you need consent for any newly collected personal data? </h4>
+          {%- if legalBaseOther%}
+            <span class="separator">&ndash;</span> {{legalBaseOther}}.
+          {%- else %} 
+            <span class="separator">&ndash;</span> The legal bases not further specified).
+          {%- endif -%}
+        {%- endif -%}
+      {%- elif needConsentAUuid == uuids.needConsentYesSpecificAUuid -%}
+        We will collect consent for our specific use of the data.
+      {%- elif needConsentAUuid == uuids.needConsentYesReuseAUuid -%}
+        We will collect consent for our use as well as reuse of the data.
+      {%- elif needConsentAUuid == uuids.needConsentYesAnonymizeAUuid -%}
+        We will collect consent for our use of the data, and will anonymize the data afterwards for reuse.
+      {%- endif -%}
+      </p>
+      </li>
+    {%- endif -%}
 
-  {%- if consent == uuids. doNocollectAUuid -%}
-      <p> We dont  need any consent for collected data because those are not personal </p>.
-  {%- elif consent == uuids.lawfullAUuid -%}
-      <p> No, our work on personal data is based on a lawful basis other than consent : {{ consentLegalBases}} </p>
-  
-  {%- elif consent == uuids.consentSpecificAUuid -%}
-      <p> Yes, we will collect consent for our specific use of the data </p>
+    </ul>
 
-  {%- elif consent == uuids.consentSharingAUuid -%}
-      <p> Yes, we will collect consent for our use as well as sharing of the data </p>
 
-   {%- elif consent == uuids.consentAnonymAUuid -%}
-      <p> Yes, we will collect consent for our use of the data, and will anonymize the data afterwards for reuse </p>
-   {% endif%}
+    {# Ownership #}
+    {%- set ownershipPath = [uuids.creatingCUuid, uuids.ownershipQUuid]|reply_path -%}
+    {%- set ownershipAUuid = repliesMap[ownershipPath]|reply_str_value -%}
 
-   <h3> 6.How  will  other legal issues, such as intellectual property rights and ownership, be managed? </>
+    {%- if ownershipAUuid -%}
 
-   <h4> How will IP rights arranged for the generated data? </h4>
+      <h3>How  will  other legal issues, such as intellectual property rights and ownership be managed ?</h3>
 
-   {%- if ip == uuids.notCopyrightAUuid,  -%}
-      <p> Our data is legally not copyrightable, there is no legal owner </p>.
-   {%- elif ip == uuids.ownedInvestigatorAUuid -%}
-      <p> All data will be owned by the Principle Investigator </p>
-  
-   {%- elif ip == uuids.ownedInstituteAUuid -%}
-      <p> All data will be owned by the institute </p>
+      <ul>
+      <h5> IP rights arranged for the generated data </h5>
+      
+      <li>
 
-   {%- elif ip == uuids.consortiumAUuid -%}
-      <p> We have a consortium agreement that arranges Intellectual Property </p>
+      {%- if ownershipAUuid == uuids.ownershipNoOwnerAUuid -%}
+        <p>Our data is legally not copyrightable, there is no legal owner.</p>
+      {%- elif ownershipAUuid == uuids.ownershipPIAUuid -%}
+        <p>All data will be owned by the Principal Investigator.</p>
+      {%- elif ownershipAUuid == uuids.ownershipInstituteAUuid -%}
+        <p>All data will be owned by the institute.</p>
+      {%- elif ownershipAUuid == uuids.ownershipConsortiumAUuid -%}
+        <p>We have a consortium agreement that arranges Intellectual Property.</p>
+      {%- elif ownershipAUuid == uuids.ownershipOtherAUuid -%}
+        {%- set ownershipOtherPath = [ownershipPath, uuids.ownershipOtherAUuid, uuids.ownershipOtherQUuid]|reply_path -%}
+        {%- set ownershipOther = repliesMap[ownershipOtherPath]|reply_str_value -%}
+        {%- if ownershipOther -%}
+          <p>The intellectual property for the data collected in the project arranged as following: {{ ownershipOther|dot }}</p>
+        {%- endif -%}
+      {%- endif -%}
 
-   {%- elif ip == uuids.others -%}
-      <p>  Intellectual property for the data collected in the project: {{ intellectProperty}} </p>
+      </li>
 
-   {% endif % }
+      </ul>
+    
+    {%- endif -%}
+    
+    </ul>
 
-  
+  </div>
+</div>
 
  
 

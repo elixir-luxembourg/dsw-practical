@@ -1,35 +1,62 @@
 {
-    "templateId": "fnr-dmp-template",
-    "organizationId": "LCSB",
+    "templateId": "fnr-template",
+    "organizationId": "dsw.learning",
     "version": "0.1.0",
-    "name": "FNR DMP Template",
-    "description": "The FNR DMP Template helps you (researchers,...) to write your data management plan (DMP) according to your project requirements. You are guided through questions and suggestions.",
+    "name": "FNR Template",
+    "description": "Luxembourg national funding body FNR template usable in DSW",
     "license": "CC0",
     "metamodelVersion": 3,
     "recommendedPackageId": "dsw.learning:DM-DS-Workshop-Model:0.0.2",
     "allowedPackages": [{
-        "orgId": "LCSB",
-        "kmId": "FNR Template",
+        "orgId": "dsw.learning",
+        "kmId": "DM-DS-Workshop-Model",
         "minVersion": "0.0.2",
         "maxVersion": null
     }],
     "formats": [{
-        "uuid": "c104e5eb-70ec-4147-8b96-f7d417e12e8d",
-        "name": "HTML",
-        "shortName": "html",
-        "icon": "fas fa-file",
-        "color": "#f15722",
-        "steps": [{
-            "name": "jinja",
-            "options": {
-                "template": "src/template.j2.html",
-                "content-type": "text/html",
-                "extension": "html"
-            }
-        }]
-    }],
+            "uuid": "52dd4c01-913e-489d-8580-50d1defb05b3",
+            "name": "HTML",
+            "shortName": "html",
+            "icon": "fas fa-file",
+            "color": "#f15722",
+            "steps": [{
+                "name": "jinja",
+                "options": {
+                    "template": "src/index.html.j2",
+                    "content-type": "text/html",
+                    "extension": "html"
+                }
+            }]
+        },
+
+
+        {
+            "uuid": "d70139c8-8752-4f47-88fb-f784548b0494",
+            "name": "PDF",
+            "shortName": "pdf",
+            "icon": "fas fa-file",
+            "color": "#f15722",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
+                },
+
+                {
+                    "name": "wkhtmltopdf",
+                    "options": {}
+                }
+
+            ]
+        }
+
+    ],
+
     "_tdk": {
-        "version": "2.12.1",
+        "version": "2.14.0",
         "readmeFile": "README.md",
         "files": [
             "*"

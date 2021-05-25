@@ -6,15 +6,6 @@
   {% endfor %}
 {% endmacro %}
 
-{# Formatting macros #}
-{#{%- macro formatEmail(email) -%}
-  <span class="contact-email"><a href="mailto:{{ email }}">{{ email }}</a></span>
-{%- endmacro -%}
-
-{%- macro formatOrcid(orcid) -%}
-  <span class="contact-orcid"><span class="mini-orcid-icon-16"></span> {{ orcid }}</span>
-{%- endmacro -%}} #}
-
 {%- macro integrationValue(reply, questionUuid) -%}
   {%- if reply and reply.value.value.type == "IntegrationType" -%}
     {%- set question = km.entities.questions[questionUuid] -%}
