@@ -24,7 +24,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 
 1. Login to the DSW.<br/>
-2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](images/knowlege_model.png)<br/><br/><br/>
+2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](images/list_workshop_km.png)<br/><br/><br/>
 3. Click on the knowledge model named `DM-DS_Workshop_Model` to go to its overview page, which displays model's version history and available actions.<br/>
 4. Click `Create project` on top right to create a new questionnaire from the workshop model: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
 5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other trainees, for example include your user name in the questionnaire name. In addition, you may share your questionnaire with others. You may allowing either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your questionnaire. <br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>
