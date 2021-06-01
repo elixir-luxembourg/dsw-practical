@@ -31,7 +31,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 ## Exercice 3: Preview (empty) report from your questionnaire
 
- * To have a preview report of your questionnaire, on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+ * To have a preview report from your questionnaire: on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
 ## Exercice 4: Answer questions in the questionnaire
 
@@ -45,5 +45,5 @@ When filling in the questionnaire pay attention to the following:
 
 ## Exercise 5: Export (filled) report from your questionnaire
 
-1. Once you complete the questionnaire, export the (filled) report of your questionnaire: on the navigation menu click on `Documents` and create `New Document`. Select the FNR Template), the default format you need and click on the `Create` button. <br/><br/><br/>![Alt](images/doc.png)<br/><br/><br/>
+1. Once you complete the questionnaire, export the (filled) report from your questionnaire: on the navigation menu click on `Documents` and create `New Document`. Select the FNR Template), the default format you need and click on the `Create` button. <br/><br/><br/>![Alt](images/doc.png)<br/><br/><br/>
 2. Click on the three dots menu next to your document and `Download` it. <br/><br/><br/>![Alt](images/download.png)<br/><br/><br/>
