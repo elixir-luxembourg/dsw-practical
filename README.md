@@ -31,7 +31,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 ## Exercice 3: Preview (empty) report from your questionnaire
 
- * To have a preview report of your questionnaire, on the navigation menu click on the `settings` button, select the required template (FNR Template) and the `HTML` defautl format . Then click on `preview` on the navigation menu to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+ * To have a preview report of your questionnaire, on the navigation menu click on the `settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `preview` on the navigation menu to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
 ## Exercice 4: Answer questions in the questionnaire
 
