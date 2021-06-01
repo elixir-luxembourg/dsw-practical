@@ -14,7 +14,7 @@ Before starting the practical, make sure you have the following ready, if not, p
 
 ## Exercice 1 : sign up
 
-* Go to the url [link](https://learning.ds-wizard.org/) for DSW training and sign up.
+* Go to the url [link](https://learning.ds-wizard.org/) for DSW training and `Sign up`.
 
 
 ## Exercise 2: Create questionnaire (project) from existing knowledge model
@@ -26,12 +26,12 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 1. Login to the DSW.<br/>
 2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](images/list_workshop_km.png)<br/><br/><br/>
 3. Click on the knowledge model named `DM-DS_Workshop_Model` to go to its overview page, which displays model's version history and available actions.<br/>
-4. Click `Create project` on top right to create a project as a questionnaire from the workshop model: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
+4. Click `Create Project` on top right to create a project as a questionnaire from the workshop model: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
 5. Provide a name for your questionnaire, try to use a name that can distinguish your record from other trainees, for example include your user name in the questionnaire name. In addition, you may share your questionnaire with others. You may allowing either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your questionnaire. <br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>
 
 ## Exercice 3: Preview (empty) report from your questionnaire
 
- * To have a preview report of your questionnaire, on the navigation menu click on the `settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `preview` on the navigation menu to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+ * To have a preview report of your questionnaire, on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
 ## Exercice 4: Answer questions in the questionnaire
 
