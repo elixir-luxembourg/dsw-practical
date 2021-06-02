@@ -1,9 +1,7 @@
 # Practical with the Data Stewardship Wizard
 
-
 The Data Stewardship Wizard, hereon DSW, is an awareness tool in the area of research data management (RDM). 
 In this practical you'll fill in a questionnaire using the DSW. The questionnaire will guide you through key requirements in RDM making you think if and how your meet those requirements in your project.
-
 
 ## Required material
 
@@ -16,12 +14,10 @@ Before starting the practical, make sure you have the following ready, if not, p
 
 * Go to the url [link](https://learning.ds-wizard.org/) for DSW training and `Sign up`.
 
-
 ## Exercise 2: Create questionnaire (project) from existing knowledge model
 
 In the DSW tool, _Knowledge Models_ act as source databases that hold requirements in one or more sub-area of RDM.  
 The tool comes pre-packed with a comprehensive default knowledge model. In this practical we will use a cut-down version of this model. To create and fill in a questionnaire:
-
 
 1. Login to the DSW.<br/>
 2. On the left-hand side navigation menu click `Knowledge Models` to list models available. You should see `DM-DS Workshop Model` as below: <br/> <br/><br/>![Alt](images/list_workshop_km.png)<br/><br/><br/>
@@ -31,7 +27,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 ## Exercice 3: Preview (empty) report from your questionnaire
 
- * To have a preview report from your questionnaire: on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+* To have a preview report from your questionnaire: on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
 ## Exercice 4: Answer questions in the questionnaire
 
@@ -40,8 +36,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 When filling in the questionnaire pay attention to the following:
 
-
- - for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](images/add_answer.png)<br/><br/><br/>
+- for some questions you may provide more than one answer. If you want to add a new answer click the `Add` button at the end of your last answer. <br/><br/><br/>![Alt](images/add_answer.png)<br/><br/><br/>
 
 ## Exercise 5: Export (filled) report from your questionnaire
 
