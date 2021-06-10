@@ -51,9 +51,108 @@
                 }
 
             ]
+        },
+
+
+        {
+            "uuid": "8b25a2f6-9eb0-4d89-9d29-ee98db8f515d",
+            "name": "LaTeX Document",
+            "shortName": "latex",
+            "icon": "far fa-file-alt",
+            "color": "#44D7B6",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "latex",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "159f48f6-fece-4bcc-b1de-edba92c243df",
+            "name": "MS Word Document",
+            "shortName": "docx",
+            "icon": "far fa-file-word",
+            "color": "#0991FF",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "docx",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "52b64f8d-7c88-42e0-afa6-a490e5e9f9f5",
+            "name": "OpenDocument Text",
+            "shortName": "odt",
+            "icon": "far fa-file-alt",
+            "color": "#32C5FF",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "odt",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "d7aec930-97d4-4a27-b621-c3f3b802d307",
+            "name": "Markdown Document",
+            "shortName": "md",
+            "icon": "far fa-file-alt",
+            "color": "#6D7278",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "markdown",
+                        "from": "html"
+                    }
+                }
+            ]
         }
 
+
+
     ],
+
+
+
 
     "_tdk": {
         "version": "2.14.0",
