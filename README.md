@@ -11,7 +11,7 @@ Before starting the practical, make sure you have the following ready, if not, p
 * The URL [link](https://learning.ds-wizard.org/) for DSW training instance.
 * The [example scenario](https://github.com/elixir-luxembourg/DS-DM-training/blob/master/resources/DM-DP_RunningExample.pdf) for our workshop.
 
-## Exercice 1: sign up (1 min)
+## Exercise 1: sign up (1 min)
 
 * Go to [the DSW training instance](https://learning.ds-wizard.org/) and click `Sign up`. <br/><br/><br/>![Alt](images/signup.png)<br/><br/><br/>
 
@@ -26,12 +26,12 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 4. Click `Create Project` on top right to create a project: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
 5. Provide a name for your project, try to use a name that can distinguish your record from other trainees, for example include your username in the project name. In addition, you may share your project with others. You may allow either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your project. Each project is a questionnaire that represents an instantiation of the knowledge model.<br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>.
 
-## Exercice 3: Preview (empty) report from your  questionnaire (1 min)
+## Exercise 3: Preview (empty) report from your  questionnaire (1 min)
 
 *  Go to your newly created empty project/questionnaire. <br/><br/><br/>![Alt](images/project_settings.png)<br/><br/><br/>
 *  To create a preview report from your questionnaire, click on the `Settings` on the top navigation menu, select the required template (FNR Template) and the `HTML` default format. Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
-## Exercice 4: Fill in the questionnaire" (40 min)
+## Exercise 4: Fill in the questionnaire" (40 min)
 
 1. Go back to the your questionnaire which is ready to be filled. Under most of the questions you will find hints related to the [training scenario](https://github.com/elixir-luxembourg/DS-DM-training/blob/master/resources/DM-DP_RunningExample.pdf). <br/><br/><br/> ![Alt](images/fill1.png)<br/><br/><br/>
 2. The DSW provides a filtering feature that allows you to see questions only relevant to a particular phase of a research project. From the `Current Phase` list select `Before Submitting the DMP`. This will allow you to view and answers all questions for our practical. <br/><br/><br/> ![Alt](images/fill2.png)<br/><br/><br/>
