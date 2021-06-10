@@ -1,7 +1,7 @@
 # Practical with the Data Stewardship Wizard
 
 The [Data Stewardship Wizard (DSW)](https://ds-wizard.org/about.html), is an awareness tool in the area of research data management (RDM) which helps researchers and data stewards with writing data management plans (DMP) for FAIR Open science. 
-In this practical, you are preparing a data management plan for your postdoc project, and you'll fill in a questionnaire using the DSW.
+In this practical, you will prepare a data management plan for your postdoc project, you'll do so via filling questionnaire using the DSW.
 The questionnaire will guide you through key requirements in RDM making you think if and how to meet those requirements in your project. 
 
 ## Required material
@@ -13,7 +13,7 @@ Before starting the practical, make sure you have the following ready, if not, p
 
 ## Exercice 1: sign up (1 min)
 
-* Go to the url [link](https://learning.ds-wizard.org/) for DSW training and `Sign up`.
+* Go to [the DSW training instance](https://learning.ds-wizard.org/) and click `Sign up`. <br/><br/><br/>![Alt](images/signup.png)<br/><br/><br/>
 
 ## Exercise 2: Create project (questionnaire) from existing knowledge model (2 min)
 
@@ -24,11 +24,12 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 2. On the left-hand side navigation menu click `Knowledge Models` to list models available. <br/> <br/><br/>![Alt](images/list_workshop_km.png)<br/><br/><br/>
 3. Click on the knowledge model named `DM-DS_Workshop_Model` to go to its overview page, which displays model's version history and available actions.<br/>
 4. Click `Create Project` on top right to create a project: <br/><br/><br/>![Alt](images/project.png)<br/><br/><br/>
-5. Provide a name for your project, try to use a name that can distinguish your record from other trainees, for example include your user name in the project name : username_projectName. In addition, you may share your project with others. You may allow either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your project. Each project is a questionnaire that represents an instantiation of the knowledge model.  <br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>.
+5. Provide a name for your project, try to use a name that can distinguish your record from other trainees, for example include your username in the project name. In addition, you may share your project with others. You may allow either DSW tool users or anyone with a link to view/edit your answers. Clicking `Save` will create your project. Each project is a questionnaire that represents an instantiation of the knowledge model.<br/><br/><br/> ![Alt](images/project_name.png)<br/><br/><br/>.
 
 ## Exercice 3: Preview (empty) report from your  questionnaire (1 min)
 
-* To have a preview report from your questionnaire: on the navigation menu, click on the `Settings` button, select the required template (FNR Template) and the `HTML` default format . Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+*  Go to your newly created empty project/questionnaire. <br/><br/><br/>![Alt](images/project_settings.png)<br/><br/><br/>
+*  To create a preview report from your questionnaire, click on the `Settings` on the top navigation menu, select the required template (FNR Template) and the `HTML` default format. Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
 
 ## Exercice 4: Fill in the questionnaire" (40 min)
 
