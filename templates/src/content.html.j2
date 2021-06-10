@@ -1,0 +1,54 @@
+<div id="dmp-content">
+    <section id="existing-data" class="dmp-section">
+        <h2>Section A: DATA DESCRIPTION AND COLLECTION OR RE-USE OF EXISTING DATA </h2>
+
+        {% include "src/questions/existing-data.html.j2" with context %} 
+        {% include "src/questions/collected-data.html.j2" with context %}  
+         
+
+    </section>
+
+    <section id="doc-quality-data" class="dmp-section">
+    <h2>Section B: DOCUMENTATION AND DATA QUALITY</h2>
+
+        {% include "src/questions/metadata-doc.html.j2" with context %}
+
+    </section>
+
+    <h2>Section C: STORAGE AND BACKUP DURING THE RESEARCH PROCESS</h2>
+
+        {% include "src/questions/data-stored.html.j2" with context %}
+    </section>
+
+    <section id="storage-backup" class="dmp-section">
+    <h2> Section D : LEGAL AND ETHICAL REQUIREMENTS, CODES OF CONDUCT </h2>
+
+        {% include "src/questions/legal.html.j2" with context %}
+    </section>
+
+
+    <section id="sharing-preservation" class="dmp-section">
+        <h2>Section E: DATA SHARING AND LONG-TERM PRESERVATION</h2>
+
+        {% include "src/questions/data-preservation-sharing.html.j2" with context %}
+    </section>
+
+    
+    <section id="responsibilities-resources" class="dmp-section">
+        <h2>Section F: DATA MANAGEMENT RESPONSIBILITIES AND RESOURCES</h2>
+
+    </section>
+
+</div>
+
+
+
+
+
+
+    
+
+
+
+
+ 

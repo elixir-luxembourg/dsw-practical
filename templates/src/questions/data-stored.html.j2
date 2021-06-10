@@ -1,0 +1,195 @@
+<div id="q-docs-metadata" class="question">
+
+  <div class="answer">
+
+      {# Shared workspace #}
+
+
+      {%- set workspaceConvPath = [uuids.processingCUuid, uuids.sharedWorkspaceQUuid ]|reply_path -%}
+      {%- set workspaceConvAUuid = repliesMap[workspaceConvPath]|reply_str_value -%}
+
+      {%- if workspaceConvAUuid -%}
+
+            <h3>How  will  data and  metadata  be stored and backed up    during    the research?</h3>
+            <h4> Metadata storage and backup </h4>
+
+      <ul>
+
+
+            <h5>Shared workspace</h5>
+            
+
+            {%- if workspaceConvAUuid == uuids.sharedWorkspaceNoAUuid -%}
+            <li>
+      
+                  {%- set notsharedBackupPath = [workspaceConvPath, uuids.sharedWorkspaceNoAUuid, uuids.notSharedBackupQUuid]|reply_path -%}
+                  {%- set notSharedBackupAUuid = repliesMap[notsharedBackupPath]|reply_str_value -%}
+
+                  {%- if notSharedBackupAUuid == uuids.notSharedBackupNoQUuid-%}
+                        Local copies of the data are not kept individually by the researchers.
+                  
+                  {%- elif notSharedBackupAUuid == uuids.notSharedBackupYesQUuid-%}
+
+                        Local copies of data are kept individually by researchers backed up, traceable and protected against both equipment failure and human error.
+
+                  {%- endif-%}
+
+            </li>      
+
+            {%- endif-%}
+
+            {%- if workspaceConvAUuid == uuids.sharedWorkspaceYesAUuid -%}
+
+                  <li>
+                  <p> we use a shared workspace to store and work on data </p>
+                  {%- set workspaceSpecialistsPath = [workspaceConvPath, uuids.sharedWorkspaceYesAUuid, uuids.sharedWorkspaceYesSpecialistsAUuid, ]|reply_path -%}
+                  {%- set workspaceSpecialistsAUuid = repliesMap[workspaceSpecialistsPath]|reply_str_value -%}
+
+                  {%- if workspaceSpecialistsAUuid == uuids.sharedWorkspaceYesSpecialistsYesAUuid-%}
+                       <p>This work space Will be run by dedicated specialists</p>
+
+                  {%- elif workspaceSpecialistsAUuid == uuids.sharedWorkspaceYesSpecialistsNoAUuid-%}
+                        <p>This work space Will not be run by dedicated specialists</p>
+
+
+
+                  </li>
+                       
+                  {%- endif-%}
+
+           
+
+      
+                  
+
+                  
+
+
+
+
+
+
+
+            {%- endif-%}
+
+
+           
+
+      {%- endif-%}
+
+      
+
+
+      {# Storage and file conventions #}
+
+
+      {%- set storageConvPath = [uuids.processingCUuid, uuids.storageConvQUuid]|reply_path -%}
+
+      {%- set storageConvAUuid = repliesMap[storageConvPath]|reply_str_value -%}
+
+      {%- if storageConvAUuid == uuids.storageConvExploreAUuid -%}
+            {%- set stConvPrefix = [storageConvPath, uuids.storageConvExploreAUuid]|reply_path -%}
+            {%- set storageConvFSysPath = [stConvPrefix, uuids.storageConvFSysQUuid]|reply_path -%}
+            {%- set storageConvFSysAUuid = repliesMap[storageConvFSysPath]|reply_str_value -%}
+
+            {%- set storageConvFSysPath = [stConvPrefix, uuids.storageConvFSysQUuid]|reply_path -%}
+            {%- set storageConvFSysAUuid = repliesMap[storageConvFSysPath]|reply_str_value -%}
+
+
+
+            
+            {%- if storageConvFSysAUuid -%}
+                  <h5>Storage and file conventions</h5>
+            {# File System #}
+                  <li>
+            
+                  {%- if storageConvFSysAUuid == uuids.storageConvFSysNoAUuid -%}
+                        We will not use a filesystem with files and folders
+                  {%- elif storageConvFSysAUuid == uuids.storageConvFSysYesAUuid -%}
+                        <p> We will use a system with files and folders: </p>
+
+                        {%- set storageConvFSysNamingPath = [storageConvFSysPath , uuids.storageConvFSysYesAUuid, uuids.scFSysSubjFoldersQUuid, uuids.scFSysSubjFoldersYesAUuid, uuids.scFSysSubjFoldersConvsQUuid]|reply_path -%}
+
+                        {%- set storageConvFSysNaming = repliesMap[storageConvFSysNamingPath]|reply_str_value -%}
+
+                        {%- if storageConvFSysNaming -%}
+                          <p> We will use a folder for each sample/subject with the following conventions : {{storageConvFSysNaming}} </p>
+                        {%- endif -%}
+
+                        {%- set storageConvFSysAnalysisPath = [storageConvFSysPath , uuids.storageConvFSysYesAUuid, uuids.scFSysAnalysisFoldersQUuid, uuids.scFSysAnalysisFoldersYesAUuid, uuids.scFSysAnalysisFoldersConvsQUuid]|reply_path -%}
+
+                        {%- set storageConvFSysAnalysis = repliesMap[storageConvFSysAnalysisPath]|reply_str_value -%}
+
+                        {%- if storageConvFSysAnalysis -%}
+                         <p> We will use a (sub)folder for each (repeated) analysis with the following conventions : {{storageConvFSysAnalysis}} </p>
+                        {%- endif -%}
+                        
+                        {%- set storageConvFSysWorkflowPath = [storageConvFSysPath , uuids.storageConvFSysYesAUuid, uuids.scFSysWorkflowStepFoldersQUuid, uuids.scFSysWorkflowStepFoldersYesAUuid, uuids. scFSysWorkflowStepFoldersConvsQUuid]|reply_path -%}
+
+                        {%- set storageConvFSysWorkflow = repliesMap[storageConvFSysWorkflowPath]|reply_str_value -%}
+
+                        {%- if storageConvFSysWorkflow -%}
+                         <p> We will use a (sub)folder for each step in the analysis workflow with the following conventions : {{storageConvFSysWorkflow}} </p>
+                        {%- endif -%}
+                        
+                  
+
+
+
+                  </li>
+
+
+                  {%- endif-%}
+       </ul>
+
+
+            {# Access control in shared workspace #}
+                  {%- set sharedAccessControlPath = [workspaceConvPath, uuids.sharedWorkspaceYesAUuid, uuids.sharedAccessControlQUuid]|reply_path -%}
+                  {%- set sharedAccessControlAUuid = repliesMap[sharedAccessControlPath]|reply_str_value -%}
+
+                  {%- if sharedAccessControlAUuid -%}
+                        <h3>How  will  data security and protection of sensitive  data  be taken  care  of during the research? </h3>
+
+                        <ul>
+                        
+                        <h5>Access control in data workspace</h5>
+                        
+                        <li>
+
+
+
+                        {%- if sharedAccessControlAUuid == uuids.sharedAccessControlMembersRWAUuid -%}
+                              <p>Only all project members have read/write access to the data.</p>
+                        {%- elif sharedAccessControlAUuid == uuids.sharedAccessControlInstituteRAUuid -%}
+                              <p>Anyone in the institute has read access to the data; all project members have read/write access.</p>
+                        {%- elif sharedAccessControlAUuid == uuids.sharedAccessControlMembersRAUuid -%}
+                              <p>Only project members will have read access; only selected project members will be able to write data.</p>
+                        {%- elif sharedAccessControlAUuid == uuids.sharedAccessControlMembersRequestAUuid -%}
+                              <p>Anyone in the institute can read data, only project members can request write access.</p>
+                        {%- endif -%}
+
+                        </li>
+
+                        </ul>
+
+                  {%- endif -%}
+
+            {%- endif-%}
+      {%- endif-%}
+
+      
+
+      
+
+
+
+
+  
+  <div/>
+
+<div/>
+  
+
+  
+
+

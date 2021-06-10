@@ -1,0 +1,206 @@
+<div id="q-docs-metadata" class="question">
+  
+  <div class="answer">
+
+
+ {# Metadata #}
+
+   
+    
+    
+    {%- set metadataPath = [uuids.creatingCUuid, uuids.metadataQUuid]|reply_path -%}
+    {%- set metadataAUuid = repliesMap[metadataPath]|reply_str_value -%}
+    {%- if metadataAUuid == uuids.metadataExploreAUuid -%}
+
+      {%- set metadataItemsPath = [metadataPath, uuids.metadataExploreAUuid]|reply_path -%}
+
+      <h3>What metadata and documentation will accompany the data?</h3>
+
+      <h4> Description of metadata and how data will document :  </h4>
+
+      <ul>
+
+      {# provenance #}
+
+     
+
+
+      {%- set metadataProvenceItemsPath =[metadataItemsPath,  uuids.metadataProvenanceQUuid]|reply_path-%}
+
+       
+      
+      {%- set metadataProvenceItems = repliesMap[metadataProvenceItemsPath]|reply_str_value -%}
+      {%- if metadataProvenceItems-%}
+         <h5> Data Provenance :  </h5>
+
+      
+       
+        <li>
+        {%- if metadataProvenceItems == uuids.metadataProvenanceElectroAUuid -%}
+        All steps will be documented in an (electronic) lab notebook
+        {%- elif metadataProvenceItems == uuids.metadataProvenanceWorkflowAUuid -%}
+        Our workflow system documents the provenance automatically and completely Reusability
+        {%- elif metadataProvenceItems == uuids.metadataProvenanceReadmeAUuid -%}
+        We will use README files to document data origin and generation/processing steps 
+        {%- elif metadataProvenceItems == uuids.metadataProvenanceFilesAUuid -%}
+        We will use file names and file headers to track data files to samples of origin
+        
+
+        {%- endif -%}
+        </li>
+       {%- endif -%}
+
+      {# Suitable#}
+
+      
+
+      {%- set metadataSuitableItemsPath = [metadataItemsPath,  uuids.metadataSuitableQUuid]|reply_path-%}
+      {%- set metadataSuitableItems = repliesMap[metadataSuitableItemsPath]|reply_str_value -%}
+
+      {%- if metadataSuitableItems -%}
+        <h5> Data suitable :  </h5>
+
+     
+        <li>
+        {%- if metadataSuitableItems == uuids.metadataSuitableYesAUuid -%}
+        Suitable MIA standards exists for my experiments
+        {%- elif metadataSuitableItems == uuids.metadataSuitableNoAUuid-%}
+        No Suitable MIA standards exists for my experiments
+        {%- elif metadataSuitableItems == uuids.metadataSuitableDontKnowAUuid-%}
+        I Don't know if Suitable MIA standards exists for my experiments
+        {%- endif -%}
+      </li>
+
+      {%- endif -%}
+
+      
+
+      {# Reusability#}
+
+
+      
+
+      {%- set metadataReusabiltyItemsPath = [metadataItemsPath,  uuids.metadataReusabilityQUuid]|reply_path-%}
+      {%- set metadataReusabilityItems = repliesMap[metadataReusabiltyItemsPath]|reply_str_value -%}
+
+      {%- if metadataReusabilityItems -%}
+        <h5> Data Reusability beyond original purpose :  </h5>
+
+        <li>
+
+        {%- if metadataReusabilityItems == uuids.metadataReusabilityNoAUuid -%}
+        We will just document the bare minimum
+        {%- elif metadataReusabilityItems == uuids.metadataReusabilityYesAUuid-%}
+        we will document more metadata than needed for reproducibility
+        {%- endif -%}
+
+        </li>
+
+      
+      {%- endif -%}
+
+      <h5> File naming and organisation :  </h5>
+      {%- set metadataNamingFilePath = [metadataItemsPath,  uuids.metadataNamingFIleQUuid]|reply_path-%}
+      {%- set metadataNamingFileExplorePath = [metadataNamingFilePath,  uuids.metadataNamingFIleExploreAUuid]|reply_path-%}
+      {%- set metadataNamingFileOrgPath = [metadataNamingFileExplorePath,  uuids.metadataNamingFIleOrgAUuid]|reply_path-%}
+      {%- set metadataNamingFileOrg = repliesMap[metadataNamingFileOrgPath]|reply_str_value -%}
+
+      <li>
+
+        {%- if metadataNamingFileOrg -%}
+          <p> Description of your folder organisation : {{ metadataNamingFileOrg }} </p>
+        {%- endif -%} 
+
+        {%- set metadataNamingFileSopPath = [metadataNamingFileExplorePath,  uuids.metadataNamingFIleSopAUuid, uuids.metadataNamingFIleSopYesAUuid, uuids.metadataNamingFIleSopProvideAUuid]|reply_path-%}
+        {%- set metadataNamingFileSop = repliesMap[metadataNamingFileSopPath]|reply_str_value -%}
+        
+
+        {%- if metadataNamingFileSop -%}
+          <p> Institutional SOP for file naming : {{ metadataNamingFileSop }} </p>
+      {%- endif -%} 
+
+      </li>
+
+    </ul>
+
+   
+
+      {# data integrite#}
+      
+     
+
+      {%- set metadataIntegrityItemsPath = [metadataItemsPath,  uuids.metadataIntegrityQUuid]|reply_path-%}
+      {%- set metadataIntegrityItemsAUuid = repliesMap[metadataIntegrityItemsPath]|reply_str_value -%}
+      
+
+      {%- if metadataIntegrityItemsAUuid == uuids.metadataIntegrityExploreAUuid-%}
+
+      <h3>What data quality control </h3>
+       
+      <h5> Ensure data integrity:  </h5>
+
+      <ul>
+
+        <li>
+      
+          {%- set metadataIntegrityEXploreMasterPath = [metadataIntegrityItemsPath, uuids.metadataIntegrityExploreAUuid, uuids.metadataIntegrityExploreMasterAUuid]|reply_path-%}
+          {%- set metadataIntegrityEXploreMasterAUuid = repliesMap[metadataIntegrityEXploreMasterPath]|reply_str_value -%}
+
+          {%- if metadataIntegrityEXploreMasterAUuid == uuids.metadataIntegrityExploreMasterNoAUuid-%}
+            <p> We will not be keeping a master list with checksums of certified/correct/canonical/verified data </p>
+          {%- elif metadataIntegrityEXploreMasterAUuid == uuids.metadataIntegrityExploreMasterYesAUuid-%}
+            <p> We will be keeping a master list with checksums of certified/correct/canonical/verified data </p>
+          {%- endif -%}
+
+
+          {%- set metadataIntegrityEXploreDetectPath = [metadataIntegrityItemsPath, uuids.metadataIntegrityExploreAUuid, uuids.metadataIntegrityExploreDetectAUuid]|reply_path-%}
+          {%- set metadataIntegrityEXploreDetectAUuid = repliesMap[metadataIntegrityEXploreDetectPath]|reply_str_value -%}
+
+          {%- if metadataIntegrityEXploreDetectAUuid == uuids.metadataIntegrityExploreDetectNoAUuid-%}
+            <p> We will not define a way to detect file or sample swaps, e.g. by measuring something independently </p>
+          {%- elif metadataIntegrityEXploreDetectAUuid == uuids.metadataIntegrityExploreDetectYesAUuid-%}
+            <p> We will define a way to detect file or sample swaps, e.g. by measuring something independently </p>
+          {%- endif -%}
+
+        </li>
+
+
+
+        
+
+        
+    
+
+      
+       </ul>
+
+    
+      
+
+        
+
+      {%- endif -%} 
+
+     
+      
+
+
+
+
+
+     
+
+    {%- endif -%}
+                        
+    
+      
+
+
+   
+
+
+      
+
+  </div> 
+</div>
+
