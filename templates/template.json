@@ -5,7 +5,7 @@
     "name": "FNR Template",
     "description": "Luxembourg national funding body FNR template usable in DSW",
     "license": "CC0",
-    "metamodelVersion": 3,
+    "metamodelVersion": 10,
     "recommendedPackageId": "dsw.learning:DM-DS-Workshop-Model:0.0.2",
     "allowedPackages": [{
         "orgId": "dsw.learning",
