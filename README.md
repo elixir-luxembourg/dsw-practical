@@ -27,8 +27,9 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 
 ## Exercise 3: Preview (empty) report from your  questionnaire (1 min)
 
-*  Go to your newly created empty project/questionnaire. <br/><br/><br/>![Alt](images/project_settings.png)<br/><br/><br/>
-*  To create a preview report from your questionnaire, click on the `Settings` on the top navigation menu, select the required template (FNR Template) and the `HTML` default format. Then click on `Preview` to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+*  Go to your newly created empty project/questionnaire. To create a preview report from your questionnaire, click on the `Settings` on the top navigation menu. <br/><br/><br/>![Alt](images/project_settings.png)<br/><br/><br/>
+*  Select the required template (FNR Template) and the `HTML` as default format. `Save` your changes. <br/><br/><br/>![Alt](images/settings.png)<br/><br/><br/>
+*  Then click on `Preview` on the top navigation menu to go to the overview of the document and see the different sections of the FNR template (empty) at the moment.<br/><br/><br/>![Alt](images/preview.png)<br/><br/><br/>
 
 ## Exercise 4: Fill in the questionnaire" (40 min)
 
