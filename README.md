@@ -23,7 +23,7 @@ The tool comes pre-packed with a comprehensive default knowledge model. In this 
 1. Login to the DSW.<br/>
 2. On the right-hand click `Create` to create a project: <br/><br/><br/>![Alt](images/Create_project.png)<br/><br/><br/>
 3. Provide a name for your project, try to use a name that can distinguish your record from other trainees, for example include your username in the project name. In addition, you may share your project with others. You may allow either DSW tool users or anyone with a link to view/edit your answers.<br/>
-4. Select `Knowledge Model` for your project. We recomend for this practical to use *DM-DS_Workshop_Model* or you can use *Life Sciences DSW Knowledge Model*. Clicking `Create` will create your project. Each project is a questionnaire that represents an instantiation of the knowledge model. <br/><br/><br/> ![Alt](images/Name_project.png)<br/><br/><br/>.
+4. Select `Knowledge Model` for your project. We recomend for this practical to use **DM-DS_Workshop_Model** or you can use **Life Sciences DSW Knowledge Model**. Clicking `Create` will create your project. Each project is a questionnaire that represents an instantiation of the knowledge model. <br/><br/><br/> ![Alt](images/Name_project.png)<br/><br/><br/>.
 
 ## Exercise 3: Preview (empty) report from your  questionnaire (1 min)
 
